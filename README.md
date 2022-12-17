@@ -23,6 +23,14 @@ If you want to test with a larger dataset, the OFRecord code for the ImageNet da
 
 NOTE: Among them, the tensor parallel only splits the Linear layer. See the code for details on the tensor parallel.
 
+**BATCH_SIZE = 1**
+|  | Training time (s) | CUDAMemoryUsed (MB)  |
+|--|--|--|
+| 1d | 186.33 | GPU0: 1544.0 |
+| dp | 179.42 | GPU0: 1674.0, GPU1: 1684.0 |
+| tp | 138.83 | GPU0: 1567.0, GPU1: 1577.0 |
+| pp | 152.11 | GPU0: 1544.0, GPU1: 1188.0 |
+
 **BATCH_SIZE = 1024**
 |  | Training time (s) | CUDAMemoryUsed (MB)  |
 |--|--|--|
