@@ -107,5 +107,5 @@ def linear(in_features, out_features, bias=None):
     )
     if m.bias is not None:
         # bias is 1-d tensor
-        m.bias = torch.nn.Parameter(placement=flow.placement("cuda", [0,1]), sbp=flow.sbp.split(1))
+        m.bias = flow.nn.Parameter(placement=flow.placement("cuda", [0,1]), sbp=flow.sbp.split(1))
 
